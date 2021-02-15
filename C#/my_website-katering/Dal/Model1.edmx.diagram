@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6f3caf5c7ddf404a831c122bb0a4a7a6" Name="Diagram1">
+        <EntityTypeShape EntityType="myProjectModel.BusyDate" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.Customer" Width="1.5" PointX="3.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.Dish" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.EventExtension" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.EventPacket" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.EventsType" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.ExtraToOrder" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.OrderArchive" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.OrderDish" Width="1.5" PointX="8.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.Order" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.Recommendation" Width="1.5" PointX="1.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="myProjectModel.FK_Orders_BusyDates" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK_Customers_Recommendations" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK__EventPack__idDos__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK__OrderDish__idDos__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK_ExtraToOrder_EventExtensions" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK__OrderArch__idEve__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK__Orders__idEvent__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK_ExtraToOrder_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModel.FK_OrderDishes_Orders" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
