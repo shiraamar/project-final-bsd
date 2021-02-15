@@ -12,7 +12,6 @@ namespace api3.Controllers
 [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
-
         [HttpPost]
         [Route("register")]
         public IHttpActionResult Register([FromBody] Dto.CustDto cust )
