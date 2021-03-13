@@ -8,7 +8,7 @@ const {dishes}=props;
 const [dish, setdish] = useState([]);
 const [stateOptions, setStateValues] = useState([]);
 
-const id=1;
+const id=14;
 axios.get(`menu/GetAllDishesByStatusMeal/${id}`).then(x=>{
   debugger
 console.log(x["data"]);

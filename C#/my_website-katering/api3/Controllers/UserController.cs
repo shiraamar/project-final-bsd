@@ -22,13 +22,13 @@ namespace api3.Controllers
              return BadRequest();
         }
         [HttpGet]
-        [Route("login/{id}/{password}")]
-        public IHttpActionResult Login([FromUri] string id,[FromUri] string password)
+        [Route("login/{email}/{password}")]
+        public IHttpActionResult Login([FromUri] string email, [FromUri] string password)
         {
-            Dto.CustDto c = Bl.CustBl.Login(id, password);
+            Dto.CustDto c = Bl.CustBl.Login(email, password);
             if (c != null)
                 return Ok(c);
-            return BadRequest();
+            return Ok(false);
         }
     }
 }

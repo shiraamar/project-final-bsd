@@ -41,7 +41,7 @@
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -55,7 +55,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import 'semantic-ui-css/semantic.min.css'
+import 'semantic-ui-css/semantic.min.css';
+import axios from '../../axios'; 
 
 
 function Copyright() {
@@ -93,6 +94,24 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = ()=> {
   const classes = useStyles();
+  const [email, setEmail] = useState(undefined);
+  const [password, setPassword] = useState(undefined);
+  const signIn = () => {
+    debugger;
+    axios.get(`user/login/${email}/${password}`).then(res=>{
+      if(res.data === false) {
+        alert('error in password');
+      } else {
+        alert('success' + res.data.firstName + ' ' + res.data.lastName);
+      }
+      }).catch(e=>console.log(e));
+  }
+  const saveEmail = event => {
+    setEmail(event.target.value);
+  }
+  const savePassword = event => {
+    setPassword(event.target.value);
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -114,6 +133,7 @@ const Login = ()=> {
             name="email"
             autoComplete="email"
             autoFocus
+            onBlur={saveEmail}
           />
           <TextField
             variant="outlined"
@@ -125,18 +145,21 @@ const Login = ()=> {
             type="password"
             id="password"
             autoComplete="current-password"
+            onBlur={savePassword}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="זכור אותי"
           />
           <Button
-            type="submit"
+            // type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-          >
+            onClick={signIn}
+            value="התחבר"
+        >
             התחבר
           </Button>
           <Grid container>

@@ -12,9 +12,9 @@ namespace Bl
             return b;
         }
 
-        public static CustDto Login(string id, string password)
+        public static CustDto Login(string email, string password)
         {
-           Dal.Customer cust = Dal.CustDal.Login(id, password);
+           Dal.Customer cust = Dal.CustDal.Login(email, password);
             if(cust != null)
             {
                 Dto.CustDto c = new Dto.CustDto(cust);

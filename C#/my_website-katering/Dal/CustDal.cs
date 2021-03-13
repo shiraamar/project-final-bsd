@@ -25,14 +25,14 @@ namespace Dal
 
         }
 
-        public static Customer Login(string id, string password)
+        public static Customer Login(string email, string password)
         {
 
             try
             {
                 using (myProjectEntities db = new myProjectEntities())
                 {
-                    Customer cust = db.Customers.Where(c => c.tz == id && c.password == c.password).First();
+                    Customer cust = db.Customers.Where(c => c.email == email && c.password == password).First();
                     return cust;
                 }
             }
